@@ -1,6 +1,8 @@
 #Build Directories
-*/bin/
-*/obj/
+/bin/
+/obj/
+/.vs/
+*FileListAbsolute.txt
 
 # Prerequisites
 *.d
@@ -10,6 +12,9 @@
 *.lo
 *.o
 *.obj
+*.config
+*.pdb
+*.cache
 
 # Precompiled Headers
 *.gch
@@ -34,7 +39,3 @@
 *.exe
 *.out
 *.app
-*.config
-*.pdb
-*.cache
-*FileListAbsolute.txt
