@@ -46,6 +46,19 @@ namespace MetricConverter_WinApp
             this.lblOutput = new System.Windows.Forms.Label();
             this.btnVolume = new System.Windows.Forms.Button();
             this.cmbxTo = new System.Windows.Forms.ComboBox();
+            this.numberPad = new System.Windows.Forms.Panel();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
+            this.btnPeriod = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
+            this.numberPad.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDistance
@@ -102,18 +115,19 @@ namespace MetricConverter_WinApp
             // 
             // tbInput
             // 
-            this.tbInput.Location = new System.Drawing.Point(103, 120);
+            this.tbInput.Location = new System.Drawing.Point(103, 45);
             this.tbInput.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(198, 27);
             this.tbInput.TabIndex = 4;
+            this.tbInput.Click += new System.EventHandler(this.tbInput_Click);
             this.tbInput.TextChanged += new System.EventHandler(this.tbInput_TextChanged);
             // 
             // lblFrom
             // 
             this.lblFrom.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFrom.Location = new System.Drawing.Point(50, 171);
+            this.lblFrom.Location = new System.Drawing.Point(50, 96);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(121, 25);
             this.lblFrom.TabIndex = 5;
@@ -124,7 +138,7 @@ namespace MetricConverter_WinApp
             // 
             this.lblTo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTo.Location = new System.Drawing.Point(250, 171);
+            this.lblTo.Location = new System.Drawing.Point(250, 96);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(121, 25);
             this.lblTo.TabIndex = 6;
@@ -135,7 +149,7 @@ namespace MetricConverter_WinApp
             // 
             this.cmbxFrom.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cmbxFrom.FormattingEnabled = true;
-            this.cmbxFrom.Location = new System.Drawing.Point(50, 213);
+            this.cmbxFrom.Location = new System.Drawing.Point(50, 138);
             this.cmbxFrom.Name = "cmbxFrom";
             this.cmbxFrom.Size = new System.Drawing.Size(121, 28);
             this.cmbxFrom.TabIndex = 7;
@@ -147,7 +161,7 @@ namespace MetricConverter_WinApp
             this.btnConvert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConvert.BackgroundImage")));
             this.btnConvert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConvert.Font = new System.Drawing.Font("Agency FB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvert.Location = new System.Drawing.Point(103, 259);
+            this.btnConvert.Location = new System.Drawing.Point(103, 181);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(198, 198);
             this.btnConvert.TabIndex = 9;
@@ -157,11 +171,11 @@ namespace MetricConverter_WinApp
             // 
             // lblOutput
             // 
-            this.lblOutput.Location = new System.Drawing.Point(46, 484);
+            this.lblOutput.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutput.Location = new System.Drawing.Point(46, 447);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(325, 65);
+            this.lblOutput.Size = new System.Drawing.Size(325, 100);
             this.lblOutput.TabIndex = 10;
-            this.lblOutput.Text = "SAMPLE";
             this.lblOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnVolume
@@ -181,11 +195,139 @@ namespace MetricConverter_WinApp
             // 
             this.cmbxTo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cmbxTo.FormattingEnabled = true;
-            this.cmbxTo.Location = new System.Drawing.Point(250, 213);
+            this.cmbxTo.Location = new System.Drawing.Point(250, 138);
             this.cmbxTo.Name = "cmbxTo";
             this.cmbxTo.Size = new System.Drawing.Size(121, 28);
             this.cmbxTo.TabIndex = 12;
             this.cmbxTo.SelectedValueChanged += new System.EventHandler(this.cmbxTo_SelectedValueChanged);
+            // 
+            // numberPad
+            // 
+            this.numberPad.Controls.Add(this.btn0);
+            this.numberPad.Controls.Add(this.btnPeriod);
+            this.numberPad.Controls.Add(this.btn3);
+            this.numberPad.Controls.Add(this.btn2);
+            this.numberPad.Controls.Add(this.btn1);
+            this.numberPad.Controls.Add(this.btn6);
+            this.numberPad.Controls.Add(this.btn5);
+            this.numberPad.Controls.Add(this.btn4);
+            this.numberPad.Controls.Add(this.btn9);
+            this.numberPad.Controls.Add(this.btn8);
+            this.numberPad.Controls.Add(this.btn7);
+            this.numberPad.Location = new System.Drawing.Point(84, 386);
+            this.numberPad.Name = "numberPad";
+            this.numberPad.Size = new System.Drawing.Size(236, 285);
+            this.numberPad.TabIndex = 13;
+            // 
+            // btn7
+            // 
+            this.btn7.Location = new System.Drawing.Point(0, -1);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(80, 80);
+            this.btn7.TabIndex = 0;
+            this.btn7.Text = "7";
+            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            // 
+            // btn8
+            // 
+            this.btn8.Location = new System.Drawing.Point(78, -1);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(80, 80);
+            this.btn8.TabIndex = 0;
+            this.btn8.Text = "8";
+            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            // 
+            // btn9
+            // 
+            this.btn9.Location = new System.Drawing.Point(156, -1);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(80, 80);
+            this.btn9.TabIndex = 0;
+            this.btn9.Text = "9";
+            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            // 
+            // btn6
+            // 
+            this.btn6.Location = new System.Drawing.Point(156, 77);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(80, 80);
+            this.btn6.TabIndex = 0;
+            this.btn6.Text = "6";
+            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
+            // 
+            // btn5
+            // 
+            this.btn5.Location = new System.Drawing.Point(78, 77);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(80, 80);
+            this.btn5.TabIndex = 0;
+            this.btn5.Text = "5";
+            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            // 
+            // btn4
+            // 
+            this.btn4.Location = new System.Drawing.Point(0, 77);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(80, 80);
+            this.btn4.TabIndex = 3;
+            this.btn4.Text = "4";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            // 
+            // btn3
+            // 
+            this.btn3.Location = new System.Drawing.Point(156, 155);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(80, 80);
+            this.btn3.TabIndex = 0;
+            this.btn3.Text = "3";
+            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
+            // 
+            // btn2
+            // 
+            this.btn2.Location = new System.Drawing.Point(78, 155);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(80, 80);
+            this.btn2.TabIndex = 0;
+            this.btn2.Text = "2";
+            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            // 
+            // btn1
+            // 
+            this.btn1.Location = new System.Drawing.Point(0, 155);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(80, 80);
+            this.btn1.TabIndex = 0;
+            this.btn1.Text = "1";
+            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            // 
+            // btnPeriod
+            // 
+            this.btnPeriod.Location = new System.Drawing.Point(156, 233);
+            this.btnPeriod.Name = "btnPeriod";
+            this.btnPeriod.Size = new System.Drawing.Size(80, 52);
+            this.btnPeriod.TabIndex = 0;
+            this.btnPeriod.Text = ".";
+            this.btnPeriod.UseVisualStyleBackColor = true;
+            this.btnPeriod.Click += new System.EventHandler(this.btnPeriod_Click);
+            // 
+            // btn0
+            // 
+            this.btn0.Location = new System.Drawing.Point(0, 233);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(158, 52);
+            this.btn0.TabIndex = 0;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // Form1
             // 
@@ -194,6 +336,7 @@ namespace MetricConverter_WinApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(404, 671);
+            this.Controls.Add(this.numberPad);
             this.Controls.Add(this.cmbxTo);
             this.Controls.Add(this.btnVolume);
             this.Controls.Add(this.lblOutput);
@@ -214,6 +357,8 @@ namespace MetricConverter_WinApp
             this.MinimumSize = new System.Drawing.Size(420, 710);
             this.Name = "Form1";
             this.Text = "Metric Converter";
+            this.Click += new System.EventHandler(this.Form1_Click);
+            this.numberPad.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +378,18 @@ namespace MetricConverter_WinApp
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Button btnVolume;
         private System.Windows.Forms.ComboBox cmbxTo;
+        private System.Windows.Forms.Panel numberPad;
+        private System.Windows.Forms.Button btn0;
+        private System.Windows.Forms.Button btnPeriod;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn9;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn7;
     }
 }
 

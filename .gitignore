@@ -36,3 +36,5 @@
 *.app
 *.config
 *.pdb
+*.cache
+*FileListAbsolute.txt
