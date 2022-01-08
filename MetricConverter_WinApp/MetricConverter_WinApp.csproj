@@ -123,6 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BOSS_MetricConverter.ico" />
+    <None Include="Resources\thermometer.jpg" />
+    <None Include="Resources\Thermometer_Tab.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,7 +33,10 @@ namespace MetricConverter_WinApp
                 Feet_Second,
                 Miles_Hour,
                 Meters_Second,
-                Kilometers_Hour
+                Kilometers_Hour,
+                Knots,
+                Speed_Of_Sound,
+                Speed_Of_Light
             };
             internal enum MassUnits
             {
@@ -58,6 +61,12 @@ namespace MetricConverter_WinApp
                 Liters,
                 Cubic_Meters
             };
+            internal enum TemperatureUnits
+            {
+                Fahrenheit,
+                Celsius,
+                Kelvin
+            };
 
             internal static Dictionary<string, DistanceUnits> m_dStringToUnits_Distance = new Dictionary<string, DistanceUnits>()
             {
@@ -80,7 +89,10 @@ namespace MetricConverter_WinApp
                 {"Feet/Second", SpeedUnits.Feet_Second },
                 {"Miles/Hour", SpeedUnits.Miles_Hour },
                 {"Meters/Second", SpeedUnits.Meters_Second },
-                {"Kilometers/Hour", SpeedUnits.Kilometers_Hour }
+                {"Kilometers/Hour", SpeedUnits.Kilometers_Hour },
+                {"Knots", SpeedUnits.Knots },
+                {"Speed of Sound", SpeedUnits.Speed_Of_Sound },
+                {"Speed of Light", SpeedUnits.Speed_Of_Light }
             };
             internal static Dictionary<string, MassUnits> m_dStringToUnits_Mass = new Dictionary<string, MassUnits>()
             {
@@ -104,6 +116,12 @@ namespace MetricConverter_WinApp
                 {"Milliliters", VolumeUnits.Milliliters },
                 {"Liters", VolumeUnits.Liters },
                 {"Cubic Meters", VolumeUnits.Cubic_Meters }
+            };
+            internal static Dictionary<string, TemperatureUnits> m_dStringToUnits_Temp = new Dictionary<string, TemperatureUnits>()
+            {
+                {"Celsius", TemperatureUnits.Celsius },
+                {"Fahrenheit", TemperatureUnits.Fahrenheit },
+                {"Kelvin", TemperatureUnits.Kelvin }
             };
         }
 
@@ -1006,6 +1024,18 @@ namespace MetricConverter_WinApp
                                 case Units.SpeedUnits.Kilometers_Hour:
                                     sReturn = string.Format("{0} KmH", Math.Round(input * 1.09728, 4));
                                     break;
+                                // ft/sec to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input / 1.688, 4));
+                                    break;
+                                // ft/sec to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input / 1125, 4));
+                                    break;
+                                // ft/sec to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 9.836e+8, 4));
+                                    break;
                                 default: sReturn = Utils.Consts.NaN;
                                     break;
                             }
@@ -1028,6 +1058,18 @@ namespace MetricConverter_WinApp
                                 // MPH to KmH
                                 case Units.SpeedUnits.Kilometers_Hour:
                                     sReturn = string.Format("{0} KmH", Math.Round(input * 1.609, 4));
+                                    break;
+                                // MPH to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input / 1.151, 4));
+                                    break;
+                                // MPH to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input / 767, 4));
+                                    break;
+                                // MPH to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 6.706e+8, 4));
                                     break;
                                 default: sReturn = Utils.Consts.NaN;
                                     break;
@@ -1052,6 +1094,18 @@ namespace MetricConverter_WinApp
                                 case Units.SpeedUnits.Kilometers_Hour:
                                     sReturn = string.Format("{0} KmH", Math.Round(input * 3.6, 4));
                                     break;
+                                // m/sec to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input * 1.944, 4));
+                                    break;
+                                // m/sec to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input / 343, 4));
+                                    break;
+                                // m/sec to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 2.998e+8, 4));
+                                    break;
                                 default: sReturn = Utils.Consts.NaN;
                                     break;
                             }
@@ -1075,7 +1129,127 @@ namespace MetricConverter_WinApp
                                 case Units.SpeedUnits.Kilometers_Hour:
                                     sReturn = string.Format("{0} KmH", Math.Round(input, 4));
                                     break;
+                                // KmH to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input / 1.852, 4));
+                                    break;
+                                // KmH to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input / 1235, 4));
+                                    break;
+                                // KmH to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 1.079e+9, 4));
+                                    break;
                                 default: sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        case Units.SpeedUnits.Knots:
+                            switch (toSpeedUnits)
+                            {
+                                // Knots to ft/sec
+                                case Units.SpeedUnits.Feet_Second:
+                                    sReturn = string.Format("{0} ft./sec.", Math.Round(input * 1.688, 4));
+                                    break;
+                                // Knots to MPH
+                                case Units.SpeedUnits.Miles_Hour:
+                                    sReturn = string.Format("{0} MPH", Math.Round(input * 1.151, 4));
+                                    break;
+                                // Knots to m/sec
+                                case Units.SpeedUnits.Meters_Second:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input * 1.944, 4));
+                                    break;
+                                // Knots to KmH
+                                case Units.SpeedUnits.Kilometers_Hour:
+                                    sReturn = string.Format("{0} KmH", Math.Round(input * 1.852, 4));
+                                    break;
+                                // Knots to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input, 4));
+                                    break;
+                                // Knots to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input / 667, 4));
+                                    break;
+                                // Knots to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 5.827e+8, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        case Units.SpeedUnits.Speed_Of_Sound:
+                            switch (toSpeedUnits)
+                            {
+                                // Speed_Of_Sound to ft/sec
+                                case Units.SpeedUnits.Feet_Second:
+                                    sReturn = string.Format("{0} ft./sec.", Math.Round(input * 1125, 4));
+                                    break;
+                                // Speed_Of_Sound to MPH
+                                case Units.SpeedUnits.Miles_Hour:
+                                    sReturn = string.Format("{0} MPH", Math.Round(input * 767, 4));
+                                    break;
+                                // Speed_Of_Sound to m/sec
+                                case Units.SpeedUnits.Meters_Second:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input * 343, 4));
+                                    break;
+                                // Speed_Of_Sound to KmH
+                                case Units.SpeedUnits.Kilometers_Hour:
+                                    sReturn = string.Format("{0} KmH", Math.Round(input * 1235, 4));
+                                    break;
+                                // Speed_Of_Sound to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input * 667, 4));
+                                    break;
+                                // Speed_Of_Sound to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input, 4));
+                                    break;
+                                // Speed_Of_Sound to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input / 874030, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        case Units.SpeedUnits.Speed_Of_Light:
+                            switch (toSpeedUnits)
+                            {
+                                // Speed_Of_Light to ft/sec
+                                case Units.SpeedUnits.Feet_Second:
+                                    sReturn = string.Format("{0} ft./sec.", Math.Round(input * 9.836e+8, 4));
+                                    break;
+                                // Speed_Of_Light to MPH
+                                case Units.SpeedUnits.Miles_Hour:
+                                    sReturn = string.Format("{0} MPH", Math.Round(input * 6.706e+8, 4));
+                                    break;
+                                // Speed_Of_Light to m/sec
+                                case Units.SpeedUnits.Meters_Second:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input * 2.998e+8, 4));
+                                    break;
+                                // Speed_Of_Light to KmH
+                                case Units.SpeedUnits.Kilometers_Hour:
+                                    sReturn = string.Format("{0} KmH", Math.Round(input * 1.079e+9, 4));
+                                    break;
+                                // Speed_Of_Light to Knots
+                                case Units.SpeedUnits.Knots:
+                                    sReturn = string.Format("{0} Knots", Math.Round(input * 5.827e+8, 4));
+                                    break;
+                                // Speed_Of_Light to Speed of Sound
+                                case Units.SpeedUnits.Speed_Of_Sound:
+                                    sReturn = string.Format("{0} m/sec.", Math.Round(input * 874030, 4));
+                                    break;
+                                // Speed_Of_Light to Speed of Light
+                                case Units.SpeedUnits.Speed_Of_Light:
+                                    sReturn = string.Format("{0} C", Math.Round(input, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
                                     break;
                             }
                             break;
@@ -1652,6 +1826,76 @@ namespace MetricConverter_WinApp
                                 // Cubic_Meters to Cubic Meters
                                 case Units.VolumeUnits.Cubic_Meters:
                                     sReturn = string.Format("{0} m3", Math.Round(input, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        default:
+                            sReturn = Utils.Consts.NaN;
+                            break;
+                    }
+                    break;
+                case Utils.Enumerations.ConversionType.Temperature:
+                    Units.TemperatureUnits fromTempUnits = Units.m_dStringToUnits_Temp[fromSelect];
+                    Units.TemperatureUnits toTempUnits = Units.m_dStringToUnits_Temp[toSelect];
+                    switch (fromTempUnits)
+                    {
+                        case Units.TemperatureUnits.Celsius:
+                            switch (toTempUnits)
+                            {
+                                // Celsius to Celsius
+                                case Units.TemperatureUnits.Celsius:
+                                    sReturn = string.Format("{0} °C", Math.Round(input, 4));
+                                    break;
+                                // Celsius to Fahrenheit
+                                case Units.TemperatureUnits.Fahrenheit:
+                                    sReturn = string.Format("{0} °F", Math.Round((input * 9 / 5) + 32, 4));
+                                    break;
+                                // Celsius to Kelvin
+                                case Units.TemperatureUnits.Kelvin:
+                                    sReturn = string.Format("{0} °K", Math.Round(input + 273.15, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        case Units.TemperatureUnits.Fahrenheit:
+                            switch (toTempUnits)
+                            {
+                                // Fahrenheit to Celsius
+                                case Units.TemperatureUnits.Celsius:
+                                    sReturn = string.Format("{0} °C", Math.Round((input - 32) * 5/9, 4));
+                                    break;
+                                // Fahrenheit to Fahrenheit
+                                case Units.TemperatureUnits.Fahrenheit:
+                                    sReturn = string.Format("{0} °F", Math.Round(input, 4));
+                                    break;
+                                // Fahrenheit to Kelvin
+                                case Units.TemperatureUnits.Kelvin:
+                                    sReturn = string.Format("{0} °K", Math.Round((input - 32) * 5/9 + 273.15, 4));
+                                    break;
+                                default:
+                                    sReturn = Utils.Consts.NaN;
+                                    break;
+                            }
+                            break;
+                        case Units.TemperatureUnits.Kelvin:
+                            switch (toTempUnits)
+                            {
+                                // Kelvin to Celsius
+                                case Units.TemperatureUnits.Celsius:
+                                    sReturn = string.Format("{0} °C", Math.Round(input - 273.15, 4));
+                                    break;
+                                // Kelvin to Fahrenheit
+                                case Units.TemperatureUnits.Fahrenheit:
+                                    sReturn = string.Format("{0} °F", Math.Round((input - 273.15) * 9/5 + 32, 4));
+                                    break;
+                                // Kelvin to Kelvin
+                                case Units.TemperatureUnits.Kelvin:
+                                    sReturn = string.Format("{0} °K", Math.Round(input, 4));
                                     break;
                                 default:
                                     sReturn = Utils.Consts.NaN;
