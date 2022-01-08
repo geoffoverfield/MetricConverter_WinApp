@@ -47,17 +47,18 @@ namespace MetricConverter_WinApp
             this.btnVolume = new System.Windows.Forms.Button();
             this.cmbxTo = new System.Windows.Forms.ComboBox();
             this.numberPad = new System.Windows.Forms.Panel();
-            this.btn7 = new System.Windows.Forms.Button();
-            this.btn8 = new System.Windows.Forms.Button();
-            this.btn9 = new System.Windows.Forms.Button();
-            this.btn6 = new System.Windows.Forms.Button();
-            this.btn5 = new System.Windows.Forms.Button();
-            this.btn4 = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
+            this.btnPeriod = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
-            this.btnPeriod = new System.Windows.Forms.Button();
-            this.btn0 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btnTemperature = new System.Windows.Forms.Button();
             this.numberPad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,65 +220,25 @@ namespace MetricConverter_WinApp
             this.numberPad.Size = new System.Drawing.Size(236, 285);
             this.numberPad.TabIndex = 13;
             // 
-            // btn7
+            // btn0
             // 
-            this.btn7.Location = new System.Drawing.Point(0, -1);
-            this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(80, 80);
-            this.btn7.TabIndex = 0;
-            this.btn7.Text = "7";
-            this.btn7.UseVisualStyleBackColor = true;
-            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            this.btn0.Location = new System.Drawing.Point(0, 233);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(158, 52);
+            this.btn0.TabIndex = 0;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
-            // btn8
+            // btnPeriod
             // 
-            this.btn8.Location = new System.Drawing.Point(78, -1);
-            this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(80, 80);
-            this.btn8.TabIndex = 0;
-            this.btn8.Text = "8";
-            this.btn8.UseVisualStyleBackColor = true;
-            this.btn8.Click += new System.EventHandler(this.btn8_Click);
-            // 
-            // btn9
-            // 
-            this.btn9.Location = new System.Drawing.Point(156, -1);
-            this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(80, 80);
-            this.btn9.TabIndex = 0;
-            this.btn9.Text = "9";
-            this.btn9.UseVisualStyleBackColor = true;
-            this.btn9.Click += new System.EventHandler(this.btn9_Click);
-            // 
-            // btn6
-            // 
-            this.btn6.Location = new System.Drawing.Point(156, 77);
-            this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(80, 80);
-            this.btn6.TabIndex = 0;
-            this.btn6.Text = "6";
-            this.btn6.UseVisualStyleBackColor = true;
-            this.btn6.Click += new System.EventHandler(this.btn6_Click);
-            // 
-            // btn5
-            // 
-            this.btn5.Location = new System.Drawing.Point(78, 77);
-            this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(80, 80);
-            this.btn5.TabIndex = 0;
-            this.btn5.Text = "5";
-            this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
-            // 
-            // btn4
-            // 
-            this.btn4.Location = new System.Drawing.Point(0, 77);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(80, 80);
-            this.btn4.TabIndex = 3;
-            this.btn4.Text = "4";
-            this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            this.btnPeriod.Location = new System.Drawing.Point(156, 233);
+            this.btnPeriod.Name = "btnPeriod";
+            this.btnPeriod.Size = new System.Drawing.Size(80, 52);
+            this.btnPeriod.TabIndex = 0;
+            this.btnPeriod.Text = ".";
+            this.btnPeriod.UseVisualStyleBackColor = true;
+            this.btnPeriod.Click += new System.EventHandler(this.btnPeriod_Click);
             // 
             // btn3
             // 
@@ -309,25 +270,78 @@ namespace MetricConverter_WinApp
             this.btn1.UseVisualStyleBackColor = true;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
-            // btnPeriod
+            // btn6
             // 
-            this.btnPeriod.Location = new System.Drawing.Point(156, 233);
-            this.btnPeriod.Name = "btnPeriod";
-            this.btnPeriod.Size = new System.Drawing.Size(80, 52);
-            this.btnPeriod.TabIndex = 0;
-            this.btnPeriod.Text = ".";
-            this.btnPeriod.UseVisualStyleBackColor = true;
-            this.btnPeriod.Click += new System.EventHandler(this.btnPeriod_Click);
+            this.btn6.Location = new System.Drawing.Point(156, 77);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(80, 80);
+            this.btn6.TabIndex = 0;
+            this.btn6.Text = "6";
+            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
-            // btn0
+            // btn5
             // 
-            this.btn0.Location = new System.Drawing.Point(0, 233);
-            this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(158, 52);
-            this.btn0.TabIndex = 0;
-            this.btn0.Text = "0";
-            this.btn0.UseVisualStyleBackColor = true;
-            this.btn0.Click += new System.EventHandler(this.btn0_Click);
+            this.btn5.Location = new System.Drawing.Point(78, 77);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(80, 80);
+            this.btn5.TabIndex = 0;
+            this.btn5.Text = "5";
+            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
+            // 
+            // btn4
+            // 
+            this.btn4.Location = new System.Drawing.Point(0, 77);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(80, 80);
+            this.btn4.TabIndex = 3;
+            this.btn4.Text = "4";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
+            // 
+            // btn9
+            // 
+            this.btn9.Location = new System.Drawing.Point(156, -1);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(80, 80);
+            this.btn9.TabIndex = 0;
+            this.btn9.Text = "9";
+            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            // 
+            // btn8
+            // 
+            this.btn8.Location = new System.Drawing.Point(78, -1);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(80, 80);
+            this.btn8.TabIndex = 0;
+            this.btn8.Text = "8";
+            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
+            // 
+            // btn7
+            // 
+            this.btn7.Location = new System.Drawing.Point(0, -1);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(80, 80);
+            this.btn7.TabIndex = 0;
+            this.btn7.Text = "7";
+            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
+            // 
+            // btnTemperature
+            // 
+            this.btnTemperature.BackgroundImage = global::MetricConverter_WinApp.Properties.Resources.Thermometer_Tab;
+            this.btnTemperature.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTemperature.Location = new System.Drawing.Point(318, 579);
+            this.btnTemperature.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnTemperature.Name = "btnTemperature";
+            this.btnTemperature.Size = new System.Drawing.Size(80, 92);
+            this.btnTemperature.TabIndex = 14;
+            this.btnTemperature.Text = " ";
+            this.btnTemperature.UseVisualStyleBackColor = true;
+            this.btnTemperature.Click += new System.EventHandler(this.btnTemperature_Click);
             // 
             // Form1
             // 
@@ -336,6 +350,7 @@ namespace MetricConverter_WinApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(404, 671);
+            this.Controls.Add(this.btnTemperature);
             this.Controls.Add(this.numberPad);
             this.Controls.Add(this.cmbxTo);
             this.Controls.Add(this.btnVolume);
@@ -390,6 +405,7 @@ namespace MetricConverter_WinApp
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.Button btnTemperature;
     }
 }
 

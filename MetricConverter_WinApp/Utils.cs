@@ -34,7 +34,10 @@ namespace MetricConverter_WinApp
                 "Feet/Second",
                 "Miles/Hour",
                 "Meters/Second",
-                "Kilometers/Hour"
+                "Kilometers/Hour",
+                "Knots",
+                "Speed of Sound",
+                "Speed of Light"
             };
             internal static List<string> MassUnits = new List<string>()
             {
@@ -59,6 +62,12 @@ namespace MetricConverter_WinApp
                 "Liters",
                 "Cubic Meters"
             };
+            internal static List<string> TemperatureUnits = new List<string>()
+            {
+                "Fahrenheit",
+                "Celsius",
+                "Kelvin"
+            };
 
             internal static List<string> DistanceToUnits = new List<string>()
             {
@@ -81,7 +90,10 @@ namespace MetricConverter_WinApp
                 "Feet/Second",
                 "Miles/Hour",
                 "Meters/Second",
-                "Kilometers/Hour"
+                "Kilometers/Hour",
+                "Knots",
+                "Speed of Sound",
+                "Speed of Light"
             };
             internal static List<string> MassToUnits = new List<string>()
             {
@@ -106,6 +118,12 @@ namespace MetricConverter_WinApp
                 "Liters",
                 "Cubic Meters"
             };
+            internal static List<string> TemperatureToUnits = new List<string>()
+            {
+                "Fahrenheit",
+                "Celsius",
+                "Kelvin"
+            };
         }
 
         internal class Enumerations
@@ -116,7 +134,8 @@ namespace MetricConverter_WinApp
                 Distance,
                 Speed,
                 Mass,
-                Volume
+                Volume,
+                Temperature
             };
         }
     }

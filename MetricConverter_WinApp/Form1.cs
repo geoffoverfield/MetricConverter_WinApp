@@ -58,18 +58,20 @@ namespace MetricConverter_WinApp
             numberPad.Visible = numPadEnabled;
 
             // Hide things that will get in the way or cause errors
-            lblOutput.Visible   = !numPadEnabled;
-            btnDistance.Visible = !numPadEnabled;
-            btnSpeed.Visible    = !numPadEnabled;
-            btnMass.Visible     = !numPadEnabled;
-            btnVolume.Visible   = !numPadEnabled;
-            btnInfo.Visible     = !numPadEnabled;
-            lblOutput.Enabled   = !numPadEnabled;
-            btnDistance.Enabled = !numPadEnabled;
-            btnSpeed.Enabled    = !numPadEnabled;
-            btnMass.Enabled     = !numPadEnabled;
-            btnVolume.Enabled   = !numPadEnabled;
-            btnInfo.Enabled     = !numPadEnabled;
+            lblOutput.Visible       = !numPadEnabled;
+            btnDistance.Visible     = !numPadEnabled;
+            btnSpeed.Visible        = !numPadEnabled;
+            btnMass.Visible         = !numPadEnabled;
+            btnVolume.Visible       = !numPadEnabled;
+            btnInfo.Visible         = !numPadEnabled;
+            btnTemperature.Visible  = !numPadEnabled;
+            lblOutput.Enabled       = !numPadEnabled;
+            btnDistance.Enabled     = !numPadEnabled;
+            btnSpeed.Enabled        = !numPadEnabled;
+            btnMass.Enabled         = !numPadEnabled;
+            btnVolume.Enabled       = !numPadEnabled;
+            btnInfo.Enabled         = !numPadEnabled;
+            btnTemperature.Enabled  = !numPadEnabled;
         }
 
         private void enableAll()
@@ -229,6 +231,24 @@ namespace MetricConverter_WinApp
             lblOutput.Text = string.Empty;
         }
 
+        private void btnTemperature_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.thermometer;
+            if (!allEnabled)
+                enableAll();
+            if (allHidden)
+                showAll();
+
+            cmbxFrom.DataSource = Utils.Consts.TemperatureUnits;
+            cmbxTo.DataSource = Utils.Consts.TemperatureToUnits;
+            ConversionType = Utils.Enumerations.ConversionType.Temperature;
+            lblOutput.Text = string.Empty;
+            btnInfo.Visible = true;
+            btnInfo.Enabled = true;
+            btnTemperature.Visible = false;
+            btnTemperature.Enabled = false;
+        }
+
         private void btnInfo_Click(object sender, EventArgs e)
         {
             this.BackgroundImage = Properties.Resources.BOSSGames;
@@ -239,7 +259,10 @@ namespace MetricConverter_WinApp
             showInfo();
 
             ConversionType = Utils.Enumerations.ConversionType.Invalid;
-            lblOutput.Text = string.Empty;
+            btnInfo.Visible = false;
+            btnInfo.Enabled = false;
+            btnTemperature.Visible = true;
+            btnTemperature.Enabled = true;
         }
         
         private void btnConvert_Click(object sender, EventArgs e)
